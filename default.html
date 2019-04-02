@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>51Degrees.com - GPU Hash Example</title>
+    <script src="renderer.min.js" type="text/javascript" async></script>
+    <script src="https://cloud.51degrees.com/api/v4/resource.js?values=devicetype+hardwarevendor+hardwaremodel+platformname+platformversion+browsername+browserversion" type="text/javascript" async></script>
+    <style>
+        input {
+            width: 100%;
+        }
+
+        table {
+            border: 0;
+        }
+        .highlight {
+            border-color: red;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function onloadComplete() {
+            document.getElementById("rendererField").value = getRenderer();
+            function generateValues(data) {
+                document.getElementById("deviceTypeField").value = data.device.devicetype;
+                document.getElementById("hardwareVendorField").value = data.device.hardwarevendor;
+                document.getElementById("hardwareModelField").value = data.device.hardwaremodel;
+                document.getElementById("platformNameField").value = data.device.platformname;
+                document.getElementById("platformVersionField").value = data.device.platformversion;
+                document.getElementById("browserNameField").value = data.device.browsername;
+                document.getElementById("browserVersionField").value = data.device.browserversion;
+            }
+            fod.complete(generateValues);
+        }
+    </script>
+</head>
+<body onload="onloadComplete()">
+    <img src="https://51degrees.com/DesktopModules/FiftyOne/Distributor/Logo.ashx?utm_source=github&utm_medium=repository&utm_content=home&utm_campaign=gpu-hash" alt="51Degrees - THE Fastest and Most Accurate Device Detection"/>
+    <h1>51Degrees.com - GPU Hash Example</h1>
+    <figure>
+        <table>
+            <tr>
+                <td><label for="rendererField">Renderer</label></td>
+                <td><input type="text" id="rendererField" class="highlight" disabled="disabled" /></td>
+            </tr>
+            <tr>
+                <td><label for="deviceTypeField">Device Type</label></td>
+                <td><input type="text" id="deviceTypeField" disabled="disabled" /></td>
+            </tr>
+            <tr>
+                <td><label for="hardwareVendorField">Device Vendor</label></td>
+                <td><input type="text" id="hardwareVendorField" disabled="disabled" /></td>
+            </tr>
+            <tr>
+                <td><label for="hardwareModelField">Device Model</label></td>
+                <td><input type="text" id="hardwareModelField" disabled="disabled" /></td>
+            </tr>
+            <tr>
+                <td><label for="platformNameField">OS Name</label></td>
+                <td><input type="text" id="platformNameField" disabled="disabled" /></td>
+            </tr>
+            <tr>
+                <td><label for="platformVersionField">OS Version</label></td>
+                <td><input type="text" id="platformVersionField" disabled="disabled" /></td>
+            </tr>
+            <tr>
+                <td><label for="browserNameField">Browser Name</label></td>
+                <td><input type="text" id="browserNameField" disabled="disabled" /></td>
+            </tr>
+            <tr>
+                <td><label for="browserVersionField">Browser Version</label></td>
+                <td><input type="text" id="browserVersionField" disabled="disabled" /></td>
+            </tr>
+        </table>
+        <figcaption>GPU renderer and other information obtained for this device, OS and browser.</figcaption>
+    </figure>
+    <hr/>
+    <p>See <a href="renderer.js">renderer.js</a> for implementation details and open source license.</p>
+    <p>Contact <a href="mailto:support@51degrees.com?subject=GPU%20Renderer%20Open%20Source%20Project">51Degrees</a> if you've any questions. Enjoy.</p>
+    <hr/>
+    <p>Copyright 2019 - 51Degrees</p>
+</body>
+</html>

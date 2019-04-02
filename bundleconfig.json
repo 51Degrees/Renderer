@@ -1,0 +1,8 @@
+[
+  {
+    "outputFileName": "renderer.min.js",
+    "inputFiles": [
+      "renderer.js"
+    ]
+  }
+]
