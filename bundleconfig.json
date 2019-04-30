@@ -4,5 +4,17 @@
     "inputFiles": [
       "renderer.js"
     ]
+  },
+  {
+    "outputFileName": "main.min.css",
+    "inputFiles": [
+      "main.css"
+    ]
+  },
+  {
+    "outputFileName": "imagehash.min.js",
+    "inputFiles": [
+      "imagehash.js"
+    ]
   }
 ]

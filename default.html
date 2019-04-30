@@ -2,82 +2,86 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>51Degrees.com - GPU Hash Example</title>
+    <title>51Degrees.com - GPU Renderer Example</title>
+    <link rel="stylesheet" type="text/css" href="main.min.css">
+    <script src="https://cloud.51degrees.com/api/v4/resource.js?values=javascripthardwareprofile+devicetype+hardwarevendor+hardwarename+platformname+platformversion+browsername+browserversion" type="text/javascript" async></script>
     <script src="renderer.min.js" type="text/javascript" async></script>
-    <script src="https://cloud.51degrees.com/api/v4/resource.js?values=devicetype+hardwarevendor+hardwaremodel+platformname+platformversion+browsername+browserversion" type="text/javascript" async></script>
-    <style>
-        input {
-            width: 100%;
-        }
-
-        table {
-            border: 0;
-        }
-        .highlight {
-            border-color: red;
-            font-weight: bold;
-        }
-    </style>
+    <script src="imagehash.min.js" type="text/javascript" async></script>
     <script>
         function onloadComplete() {
-            document.getElementById("rendererField").value = getRenderer();
             function generateValues(data) {
                 document.getElementById("deviceTypeField").value = data.device.devicetype;
                 document.getElementById("hardwareVendorField").value = data.device.hardwarevendor;
-                document.getElementById("hardwareModelField").value = data.device.hardwaremodel;
+                document.getElementById("hardwareNamesField").innerText = data.device.hardwarename.join(', ');
                 document.getElementById("platformNameField").value = data.device.platformname;
                 document.getElementById("platformVersionField").value = data.device.platformversion;
                 document.getElementById("browserNameField").value = data.device.browsername;
                 document.getElementById("browserVersionField").value = data.device.browserversion;
             }
+            document.getElementById("rendererField").innerText = getRenderer();
+            document.getElementById("imageHashField").value = getImageHash();
             fod.complete(generateValues);
         }
     </script>
 </head>
 <body onload="onloadComplete()">
-    <img src="https://51degrees.com/DesktopModules/FiftyOne/Distributor/Logo.ashx?utm_source=github&utm_medium=repository&utm_content=home&utm_campaign=gpu-hash" alt="51Degrees - THE Fastest and Most Accurate Device Detection"/>
-    <h1>51Degrees.com - GPU Hash Example</h1>
-    <figure>
-        <table>
+    <div class="g-info__logo">
+        <img src="https://51degrees.com/DesktopModules/FiftyOne/Distributor/Logo.ashx?utm_source=github&utm_medium=repository&utm_content=home&utm_campaign=gpu-hash" alt="51Degrees - THE Fastest and Most Accurate Device Detection" />
+    </div>
+    <div class="g-header"></div>
+    <div class="c-category-header">
+        <h3 class="g-info__heading">GPU Renderer Example</h3>
+        <p>GPU renderer and additional information on this Device, OS & Browser</p>
+    </div>
+    <div class="g-info">
+        <table class="g-info__table">
             <tr>
-                <td><label for="rendererField">Renderer</label></td>
-                <td><input type="text" id="rendererField" class="highlight" disabled="disabled" /></td>
+                <td><label for="rendererField">Renderer(s)</label></td>
+                <td><textarea type="text" id="rendererField" class="highlight" rows="2"></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="imageHashField">Image Hash</label></td>
+                <td><input type="text" id="imageHashField" /></td>
             </tr>
             <tr>
                 <td><label for="deviceTypeField">Device Type</label></td>
-                <td><input type="text" id="deviceTypeField" disabled="disabled" /></td>
+                <td><input type="text" id="deviceTypeField" /></td>
             </tr>
             <tr>
                 <td><label for="hardwareVendorField">Device Vendor</label></td>
-                <td><input type="text" id="hardwareVendorField" disabled="disabled" /></td>
+                <td><input type="text" id="hardwareVendorField" /></td>
             </tr>
             <tr>
-                <td><label for="hardwareModelField">Device Model</label></td>
-                <td><input type="text" id="hardwareModelField" disabled="disabled" /></td>
+                <td><label for="hardwareNamesField">Device Name(s)</label></td>
+                <td><textarea id="hardwareNamesField" rows="4"></textarea></td>
             </tr>
             <tr>
                 <td><label for="platformNameField">OS Name</label></td>
-                <td><input type="text" id="platformNameField" disabled="disabled" /></td>
+                <td><input type="text" id="platformNameField" /></td>
             </tr>
             <tr>
                 <td><label for="platformVersionField">OS Version</label></td>
-                <td><input type="text" id="platformVersionField" disabled="disabled" /></td>
+                <td><input type="text" id="platformVersionField" /></td>
             </tr>
             <tr>
                 <td><label for="browserNameField">Browser Name</label></td>
-                <td><input type="text" id="browserNameField" disabled="disabled" /></td>
+                <td><input type="text" id="browserNameField" /></td>
             </tr>
             <tr>
                 <td><label for="browserVersionField">Browser Version</label></td>
-                <td><input type="text" id="browserVersionField" disabled="disabled" /></td>
+                <td><input type="text" id="browserVersionField" /></td>
             </tr>
         </table>
-        <figcaption>GPU renderer and other information obtained for this device, OS and browser.</figcaption>
-    </figure>
-    <hr/>
-    <p>See <a href="renderer.js">renderer.js</a> for implementation details and open source license.</p>
-    <p>Contact <a href="mailto:support@51degrees.com?subject=GPU%20Renderer%20Open%20Source%20Project">51Degrees</a> if you've any questions. Enjoy.</p>
-    <hr/>
-    <p>Copyright 2019 - 51Degrees</p>
+    </div>
+    <div class="c-category-header">
+        <h4 class="g-info__heading">What Does This Mean?</h4>
+        <p>GPU renderer details can be used alongside User-Agent and screen information to identify devices including Apple iPhone and iPad models.</p>
+        <p>See <a href="renderer.js">renderer.js</a> source code for implementation details and licensing.</p>
+        <p>Contact <a href="mailto:support@51degrees.com?subject=GPU%20Renderer%20Example">51Degrees</a> if you've got any questions.</p>
+    </div>
+    <div class="g-footer">
+        <p> All source code licensed under Mozilla Public License, v. 2.0.</p>
+        <p class="g-footer__copyright">Copyright © 2019 51Degrees</p>
+    </div>
 </body>
 </html>
