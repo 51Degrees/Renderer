@@ -108,9 +108,20 @@ function getRenderer() {
             "Ratio": 2,
             "ReportedRenderer": "Apple GPU",
             "Hash": 3129316290,
+            "ColorGamut": "srgb",
             "Value": [
-                "Apple A10 GPU",
                 "Apple A9 GPU"
+            ]
+        },
+        {
+            "Width": 640,
+            "Height": 1136,
+            "Ratio": 2,
+            "ReportedRenderer": "Apple GPU",
+            "Hash": 3129316290,
+            "ColorGamut": "p3",
+            "Value": [
+                "Apple A10 GPU"
             ]
         },
         {
@@ -199,8 +210,19 @@ function getRenderer() {
             "Ratio": 2,
             "ReportedRenderer": "Apple GPU",
             "Hash": 3129316290,
+            "ColorGamut": "srgb",
             "Value": [
-                "Apple A9 GPU",
+                "Apple A9 GPU"
+            ]
+        },
+        {
+            "Width": 750,
+            "Height": 1334,
+            "Ratio": 2,
+            "ReportedRenderer": "Apple GPU",
+            "Hash": 3129316290,
+            "ColorGamut": "p3",
+            "Value": [
                 "Apple A10 GPU"
             ]
         },
@@ -340,8 +362,19 @@ function getRenderer() {
             "Ratio": 3,
             "ReportedRenderer": "Apple GPU",
             "Hash": 3129316290,
+            "ColorGamut": "srgb",
             "Value": [
-                "Apple A9 GPU",
+                "Apple A9 GPU"
+            ]
+        },
+        {
+            "Width": 1125,
+            "Height": 2001,
+            "Ratio": 3,
+            "ReportedRenderer": "Apple GPU",
+            "Hash": 3129316290,
+            "ColorGamut": "p3",
+            "Value": [
                 "Apple A10 GPU"
             ]
         },
@@ -452,9 +485,20 @@ function getRenderer() {
             "Ratio": 3,
             "ReportedRenderer": "Apple GPU",
             "Hash": 3129316290,
+            "ColorGamut": "srgb",
             "Value": [
-                "Apple A10 GPU",
                 "Apple A9 GPU"
+            ]
+        },
+        {
+            "Width": 1242,
+            "Height": 2208,
+            "Ratio": 3,
+            "ReportedRenderer": "Apple GPU",
+            "Hash": 3129316290,
+            "ColorGamut": "p3",
+            "Value": [
+                "Apple A10 GPU"
             ]
         },
         {
@@ -691,9 +735,10 @@ function getRenderer() {
 	// screen width, height and pixel ratio returns the renderer name.
 	// @param reportedRenderer the renderer reported by WebGL.
 	// @param rendererHash the hash code from the image generated.
+	// @param colorGamut supported color gamut.
 	// @return the renderer name if the hash code and screen information
 	// exist in the look up list.
-	function lookupRenderer(reportedRenderer, rendererHash) {
+	function lookupRenderer(reportedRenderer, rendererHash, colorGamut) {
 		var w = window.screen.width * window.devicePixelRatio;
 		var h = window.screen.height * window.devicePixelRatio;
         var r = window.devicePixelRatio;
@@ -701,7 +746,8 @@ function getRenderer() {
 			var item = rendererMap[i];
 			if (item.Width == w && item.Height == h &&
 				item.Ratio == r && item.ReportedRenderer == reportedRenderer &&
-				item.Hash == rendererHash) {
+				item.Hash == rendererHash &&
+				(typeof(item.ColorGamut) == "undefined" || item.ColorGamut == colorGamut)) {
 				return item.Value;
 			}
 		}
@@ -753,8 +799,11 @@ function getRenderer() {
 					// GPU model.
 					var gpuhash = fnvHash(imageData);
 
+					// Get device color gamut
+					var colorgamut = getColorGamut();
+
 					// Loop through the map to get the renderer.
-					renderer = lookupRenderer(renderer, gpuhash);
+					renderer = lookupRenderer(renderer, gpuhash, colorgamut);
 				}
 			}
 		} catch (err) {
@@ -763,6 +812,22 @@ function getRenderer() {
 		}
 		return renderer;
 	}
+
+    // Gets color Gamut value
+    // @return string
+    function getColorGamut() {
+        try {
+            // going from larger color gamut
+            var colorGamutInOrder = ['rec2020', 'p3', 'srgb'];
+            for(var i = 0; i < colorGamutInOrder.length; i++) {
+                if (window.matchMedia('(color-gamut: ' + colorGamutInOrder[i] + ')').matches) {
+                    return colorGamutInOrder[i];
+                }
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    }
 
 	// Get the renderer from the debug UNMASKED_RENDERER_WEBGL method.
 	var renderer = getReportedRenderer();
