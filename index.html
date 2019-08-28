@@ -18,10 +18,35 @@
                 document.getElementById("browserNameField").value = data.device.browsername;
                 document.getElementById("browserVersionField").value = data.device.browserversion;
             }
-            document.getElementById("rendererField").innerText = getRenderer();
+
+            // Get the Apple graphics renderer and display the value.
+            getRenderer(function (value) {
+                if (value == 'Unknown') {
+                    // Result from function is unknown. This probably means
+                    // it's not an Apple device. 
+                    // Get the renderer using WebGL instead.
+                    var canvas = document.createElement("canvas");
+                    if (canvas != null) {
+                        var context = canvas.getContext("webgl") ||
+                            canvas.getContext("experimental-webgl");
+                        if (context) {
+                            var info = context.getExtension("WEBGL_debug_renderer_info");
+                            if (info) {
+                                value = context.getParameter(info.UNMASKED_RENDERER_WEBGL);
+                            }
+                        }
+                    }
+                }                
+                document.getElementById("rendererField").innerText = value;
+            });
+
+            // Get the value of the image hash.
             document.getElementById("imageHashField").value = getImageHash();
+            
+            // Display the device information.
             fod.complete(generateValues);
         }
+
     </script>
 </head>
 <body onload="onloadComplete()">

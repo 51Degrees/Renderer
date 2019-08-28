@@ -22,7 +22,7 @@ if (canvas != null) {
 ```
 Since iOS 12.2, the exact GPU renderer string is not returned from a direct query. All iOS devices return "Apple GPU". More complex methods must be used.
 
-`renderer.js` contains a single function named `getRenderer`. This leverages hardware defined interpolation methods and sample patterns, which vary from one GPU to another, along with the screen dimensions, to return the GPU renderer string.
+`renderer.js` contains a single function named `getRenderer`. This leverages hardware defined interpolation methods and sample patterns, which vary from one GPU to another, along with the screen dimensions and CPU benchmarking, to return the GPU renderer string.
 
 For a more in depth explanation of the techniques used, see the [article on Apple device detection](https://51degrees.com/blog/51degrees-releases-new-technique-to-identify-apple-devices-using-ios-122-or-higher).
 
@@ -31,10 +31,32 @@ To find the exact GPU model name, `renderer.js` must be included in the HTML lik
 ```
 <script src="renderer.js" type="text/javascript" async></script>
 ```
-Then to get the GPU model name, simply call the `getRenderer` function like:
+Then to get the GPU model name, simply call the `getRenderer` function passing a callback function to handle the result:
 ```
-var renderer = getRenderer();
+getRenderer(function(renderer) { console.log(renderer); } );
+```
+
+Note that the 'getRenderer' function will always return 'Unknown' unless the device is an Apple one that it knows about.
+If you also want to get the renderer name for non-Apple devices then getRenderer can be combined with the previously described WebGL query:
+
+```
+getRenderer(function (value) {
+    if (value == 'Unknown') {
+        var canvas = document.createElement("canvas");
+        if (canvas != null) {
+            var context = canvas.getContext("webgl") ||
+                canvas.getContext("experimental-webgl");
+            if (context) {
+                var info = context.getExtension("WEBGL_debug_renderer_info");
+                if (info) {
+                    value = context.getParameter(info.UNMASKED_RENDERER_WEBGL);
+                }
+            }
+        }
+    }                
+    console.log(value);
+});
 ```
 
 ## Example
-For an example of this in action, see `default.html` which uses the method to display an example page with information about the device.
+For an example of this in action, see `index.html` which uses the method to display an example page with information about the device.
