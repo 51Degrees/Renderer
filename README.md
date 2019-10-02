@@ -36,6 +36,11 @@ Then to get the GPU model name, simply call the `getRenderer` function passing a
 getRenderer(function(renderer) { console.log(renderer); } );
 ```
 
+By default the CPU Benchmarking feature is disabled as it can take several seconds to complete. To enable CPU Benchmarking pass the same-origin URL of the tak.js script.
+```
+getRenderer(function(renderer) { console.log(renderer); }, "tak.js" );
+```
+
 Note that the 'getRenderer' function will always return 'Unknown' unless the device is an Apple one that it knows about.
 If you also want to get the renderer name for non-Apple devices then getRenderer can be combined with the previously described WebGL query:
 
