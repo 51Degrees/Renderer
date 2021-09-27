@@ -28,7 +28,7 @@
 // @param complete the function to call with the renderer.
 // @param takUrl the full URL of the tak.js file (optional).
 function getRenderer(complete, takUrl) {
-	/*! VERSION = 1.610841 */ 
+	/*! VERSION = 1.611728 */ 
 	var nodes = 
 		[
 		  {
@@ -45,11 +45,11 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A7 GPU|Apple A8 GPU|Apple A9 GPU|Apple A10 GPU|Apple A11 GPU|Apple A12 GPU|Apple A13 GPU|Apple A14 GPU",
 		    "m": function(n){return height(n);},
 		    "n": [
-		      15,
 		      10,
 		      11,
 		      12,
 		      14,
+		      15,
 		      6,
 		      7,
 		      8,
@@ -82,11 +82,11 @@ function getRenderer(complete, takUrl) {
 		    "n": [
 		      20,
 		      18,
-		      27,
 		      10,
 		      11,
 		      12,
 		      14,
+		      27,
 		      19,
 		      23,
 		      26,
@@ -158,6 +158,7 @@ function getRenderer(complete, takUrl) {
 		      37,
 		      38,
 		      39,
+		      40,
 		      36
 		    ],
 		    "v": [
@@ -168,7 +169,7 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A12 GPU|Apple A13 GPU",
 		    "m": function(n){return hash3d(n);},
 		    "n": [
-		      40,
+		      41,
 		      36
 		    ],
 		    "v": [
@@ -179,8 +180,8 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A12 GPU|Apple A13 GPU",
 		    "m": function(n){return hash3d(n);},
 		    "n": [
-		      40,
-		      41
+		      43,
+		      42
 		    ],
 		    "v": [
 		      1624
@@ -190,7 +191,7 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A12 GPU|Apple A13 GPU",
 		    "m": function(n){return hash3d(n);},
 		    "n": [
-		      40,
+		      43,
 		      36
 		    ],
 		    "v": [
@@ -201,10 +202,10 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A11 GPU|Apple A12 GPU|Apple A14 GPU|Apple A13 GPU",
 		    "m": function(n){return hash3d(n);},
 		    "n": [
+		      46,
 		      44,
-		      42,
 		      36,
-		      43
+		      45
 		    ],
 		    "v": [
 		      2079
@@ -219,15 +220,16 @@ function getRenderer(complete, takUrl) {
 		  {
 		    "x": "Apple A14 GPU",
 		    "v": [
-		      2778
+		      2778,
+		      2880
 		    ]
 		  },
 		  {
 		    "x": "Apple A7 GPU|Apple A8 GPU|Apple A9X GPU|Apple A10X GPU|Apple A9 GPU|Apple A12X GPU|Apple A10 GPU|Apple A12 GPU|Apple A8X GPU|Apple M1 GPU",
 		    "m": function(n){return mediacolorgamut(n);},
 		    "n": [
-		      46,
-		      45
+		      48,
+		      47
 		    ],
 		    "v": [
 		      2048
@@ -237,8 +239,8 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A9X GPU|Apple A10X GPU|Apple A12X GPU|Apple M1 GPU|Apple A12Z GPU",
 		    "m": function(n){return mediacolorgamut(n);},
 		    "n": [
-		      47,
-		      48
+		      49,
+		      50
 		    ],
 		    "v": [
 		      2732
@@ -248,8 +250,8 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A10X GPU|Apple A12 GPU",
 		    "m": function(n){return hash(n);},
 		    "n": [
-		      50,
-		      49
+		      52,
+		      51
 		    ],
 		    "v": [
 		      2224
@@ -259,8 +261,8 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A12X GPU|Apple M1 GPU|Apple A12Z GPU",
 		    "m": function(n){return hash3d(n);},
 		    "n": [
-		      52,
-		      51
+		      54,
+		      53
 		    ],
 		    "v": [
 		      2388
@@ -270,8 +272,8 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A10 GPU|Apple A12 GPU",
 		    "m": function(n){return hash(n);},
 		    "n": [
-		      53,
-		      54
+		      55,
+		      56
 		    ],
 		    "v": [
 		      2160
@@ -287,8 +289,8 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A9X GPU|Apple A10X GPU|Apple A9 GPU|Apple A12X GPU|Apple A10 GPU|Apple A12 GPU|Apple A8 GPU|Apple A8X GPU|Apple M1 GPU",
 		    "m": function(n){return mediacolorgamut(n);},
 		    "n": [
-		      55,
-		      46
+		      57,
+		      48
 		    ],
 		    "v": [
 		      2048
@@ -298,7 +300,7 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A9 GPU|Apple A10 GPU|Apple A11 GPU",
 		    "m": function(n){return mediacolorgamut(n);},
 		    "n": [
-		      56,
+		      58,
 		      33
 		    ],
 		    "v": [
@@ -309,7 +311,7 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A9 GPU|Apple A10 GPU|Apple A11 GPU|Apple A13 GPU",
 		    "m": function(n){return mediacolorgamut(n);},
 		    "n": [
-		      56,
+		      58,
 		      35
 		    ],
 		    "v": [
@@ -320,7 +322,7 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A9 GPU|Apple A10 GPU|Apple A11 GPU|Apple A13 GPU",
 		    "m": function(n){return mediacolorgamut(n);},
 		    "n": [
-		      57,
+		      59,
 		      29
 		    ],
 		    "v": [
@@ -331,7 +333,7 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A10 GPU|Apple A11 GPU|Apple A9 GPU",
 		    "m": function(n){return mediacolorgamut(n);},
 		    "n": [
-		      56,
+		      58,
 		      31
 		    ],
 		    "v": [
@@ -342,18 +344,19 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A14 GPU",
 		    "v": [
 		      2360,
-		      2778
+		      2778,
+		      2880
 		    ]
 		  },
 		  {
 		    "x": "Apple A7 GPU|Apple A9 GPU|Apple A8 GPU",
 		    "m": function(n){return hash(n);},
 		    "n": [
-		      58,
 		      60,
-		      59,
+		      62,
 		      61,
-		      62
+		      63,
+		      64
 		    ],
 		    "v": [
 		      "srgb"
@@ -363,9 +366,9 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A10 GPU|Apple A11 GPU|Apple A13 GPU",
 		    "m": function(n){return hash3d(n);},
 		    "n": [
-		      63,
+		      65,
 		      37,
-		      64
+		      66
 		    ],
 		    "v": [
 		      "p3"
@@ -373,23 +376,23 @@ function getRenderer(complete, takUrl) {
 		  },
 		  {
 		    "x": "Apple A8 GPU|Apple A9 GPU",
-		    "m": function(n){return hash(n);},
-		    "n": [
-		      65,
-		      66
-		    ],
-		    "v": [
-		      "srgb"
-		    ]
-		  },
-		  {
-		    "x": "Apple A10 GPU|Apple A11 GPU",
 		    "m": function(n){return hash(n);},
 		    "n": [
 		      67,
 		      68
 		    ],
 		    "v": [
+		      "srgb"
+		    ]
+		  },
+		  {
+		    "x": "Apple A10 GPU|Apple A11 GPU",
+		    "m": function(n){return hash(n);},
+		    "n": [
+		      69,
+		      70
+		    ],
+		    "v": [
 		      "p3"
 		    ]
 		  },
@@ -397,8 +400,8 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A8 GPU|Apple A9 GPU",
 		    "m": function(n){return hash(n);},
 		    "n": [
-		      69,
-		      70
+		      71,
+		      72
 		    ],
 		    "v": [
 		      "srgb"
@@ -408,8 +411,8 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A10 GPU|Apple A11 GPU",
 		    "m": function(n){return hash(n);},
 		    "n": [
-		      67,
-		      71
+		      69,
+		      73
 		    ],
 		    "v": [
 		      "p3"
@@ -419,8 +422,8 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A8 GPU|Apple A9 GPU",
 		    "m": function(n){return hash(n);},
 		    "n": [
-		      72,
-		      73
+		      74,
+		      75
 		    ],
 		    "v": [
 		      "srgb"
@@ -430,9 +433,9 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A10 GPU|Apple A11 GPU|Apple A13 GPU",
 		    "m": function(n){return hash3d(n);},
 		    "n": [
-		      63,
+		      65,
 		      37,
-		      64
+		      66
 		    ],
 		    "v": [
 		      "p3"
@@ -464,7 +467,12 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A14 GPU",
 		    "v": [
 		      105985484,
-		      2364051618,
+		      2364051618
+		    ]
+		  },
+		  {
+		    "x": "Apple A14 GPU",
+		    "v": [
 		      3403189785
 		    ]
 		  },
@@ -482,6 +490,14 @@ function getRenderer(complete, takUrl) {
 		      2301174800,
 		      3403189785,
 		      4085158452
+		    ]
+		  },
+		  {
+		    "x": "Apple A13 GPU",
+		    "v": [
+		      352823931,
+		      3335845976,
+		      4193218782
 		    ]
 		  },
 		  {
@@ -510,16 +526,16 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A7 GPU|Apple A8 GPU|Apple A9X GPU|Apple A9 GPU|Apple A10 GPU|Apple A8X GPU",
 		    "m": function(n){return hash(n);},
 		    "n": [
-		      77,
-		      74,
-		      78,
 		      79,
-		      80,
-		      82,
-		      75,
 		      76,
+		      80,
 		      81,
-		      58
+		      82,
+		      84,
+		      77,
+		      78,
+		      83,
+		      60
 		    ],
 		    "v": [
 		      "srgb"
@@ -529,11 +545,11 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A10X GPU|Apple A9X GPU|Apple A12X GPU|Apple A12 GPU|Apple M1 GPU",
 		    "m": function(n){return hash3d(n);},
 		    "n": [
-		      52,
-		      84,
-		      83,
+		      54,
+		      86,
 		      85,
-		      86
+		      87,
+		      88
 		    ],
 		    "v": [
 		      "p3"
@@ -549,11 +565,11 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A10X GPU|Apple A12X GPU|Apple M1 GPU|Apple A12Z GPU",
 		    "m": function(n){return hash3d(n);},
 		    "n": [
-		      88,
-		      87,
-		      91,
+		      90,
 		      89,
-		      90
+		      93,
+		      91,
+		      92
 		    ],
 		    "v": [
 		      "p3"
@@ -604,13 +620,13 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A9X GPU|Apple A9 GPU|Apple A10 GPU|Apple A8 GPU|Apple A8X GPU",
 		    "m": function(n){return hash3d(n);},
 		    "n": [
-		      98,
-		      93,
+		      100,
 		      95,
-		      94,
-		      92,
+		      97,
 		      96,
-		      97
+		      94,
+		      98,
+		      99
 		    ],
 		    "v": [
 		      "srgb"
@@ -626,9 +642,9 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A9 GPU|Apple A10 GPU",
 		    "m": function(n){return hash(n);},
 		    "n": [
-		      99,
-		      61,
-		      62
+		      101,
+		      63,
+		      64
 		    ],
 		    "v": [
 		      "srgb"
@@ -773,9 +789,9 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A9 GPU|Apple A9X GPU|Apple A10 GPU",
 		    "m": function(n){return hash3d(n);},
 		    "n": [
-		      100,
-		      92,
-		      96
+		      102,
+		      94,
+		      98
 		    ],
 		    "v": [
 		      2114570256
@@ -791,8 +807,8 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A8 GPU|Apple A8X GPU",
 		    "m": function(n){return benchmarkcpuavg(n);},
 		    "n": [
-		      102,
-		      101
+		      104,
+		      103
 		    ],
 		    "v": [
 		      4125234388
@@ -802,9 +818,9 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A8 GPU|Apple A8X GPU",
 		    "m": function(n){return hash3d(n);},
 		    "n": [
-		      103,
-		      104,
-		      105
+		      105,
+		      106,
+		      107
 		    ],
 		    "v": [
 		      4005673483
@@ -822,8 +838,8 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A9X GPU|Apple A9 GPU|Apple A10 GPU",
 		    "m": function(n){return hash3d(n);},
 		    "n": [
-		      98,
-		      97
+		      100,
+		      99
 		    ],
 		    "v": [
 		      63583436
@@ -833,8 +849,8 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A8 GPU|Apple A8X GPU",
 		    "m": function(n){return hash3d(n);},
 		    "n": [
-		      107,
-		      106
+		      109,
+		      108
 		    ],
 		    "v": [
 		      2870741841
@@ -856,8 +872,8 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A10X GPU|Apple A9X GPU",
 		    "m": function(n){return benchmarkcpuavg(n);},
 		    "n": [
-		      108,
-		      109
+		      110,
+		      111
 		    ],
 		    "v": [
 		      583354101
@@ -867,8 +883,8 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A10X GPU|Apple A9X GPU",
 		    "m": function(n){return benchmarkcpuavg(n);},
 		    "n": [
-		      110,
-		      111
+		      112,
+		      113
 		    ],
 		    "v": [
 		      3928876783
@@ -898,8 +914,8 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple M1 GPU|Apple A10X GPU",
 		    "m": function(n){return hash(n);},
 		    "n": [
-		      113,
-		      112
+		      115,
+		      114
 		    ],
 		    "v": [
 		      3403189785
@@ -928,8 +944,8 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A8X GPU|Apple A10 GPU",
 		    "m": function(n){return hash(n);},
 		    "n": [
-		      53,
-		      114
+		      55,
+		      116
 		    ],
 		    "v": [
 		      3403189785
@@ -946,8 +962,8 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A9 GPU|Apple A9X GPU|Apple A10 GPU",
 		    "m": function(n){return benchmarkcpuavg(n);},
 		    "n": [
-		      115,
-		      116
+		      117,
+		      118
 		    ],
 		    "v": [
 		      583354101
@@ -957,9 +973,9 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A9X GPU|Apple A9 GPU|Apple A10 GPU",
 		    "m": function(n){return benchmarkcpuavg(n);},
 		    "n": [
-		      117,
 		      119,
-		      118
+		      121,
+		      120
 		    ],
 		    "v": [
 		      3928876783
@@ -988,8 +1004,8 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A8 GPU|Apple A8X GPU",
 		    "m": function(n){return benchmarkcpustd(n);},
 		    "n": [
-		      120,
-		      121
+		      122,
+		      123
 		    ],
 		    "r": [
 		      {
@@ -1023,8 +1039,8 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A8 GPU|Apple A8X GPU",
 		    "m": function(n){return benchmarkcpustd(n);},
 		    "n": [
-		      122,
-		      123
+		      124,
+		      125
 		    ],
 		    "v": [
 		      3403189785
@@ -1127,7 +1143,7 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A10 GPU|Apple A9X GPU",
 		    "m": function(n){return benchmarkcpustd(n);},
 		    "n": [
-		      124
+		      126
 		    ],
 		    "r": [
 		      {
