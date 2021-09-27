@@ -28,7 +28,7 @@
 // @param complete the function to call with the renderer.
 // @param takUrl the full URL of the tak.js file (optional).
 function getRenderer(complete, takUrl) {
-	/*! VERSION = 1.611728 */ 
+	/*! VERSION = 1.611718 */ 
 	var nodes = 
 		[
 		  {
@@ -45,11 +45,11 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A7 GPU|Apple A8 GPU|Apple A9 GPU|Apple A10 GPU|Apple A11 GPU|Apple A12 GPU|Apple A13 GPU|Apple A14 GPU",
 		    "m": function(n){return height(n);},
 		    "n": [
+		      15,
 		      10,
 		      11,
 		      12,
 		      14,
-		      15,
 		      6,
 		      7,
 		      8,
@@ -82,11 +82,11 @@ function getRenderer(complete, takUrl) {
 		    "n": [
 		      20,
 		      18,
+		      27,
 		      10,
 		      11,
 		      12,
 		      14,
-		      27,
 		      19,
 		      23,
 		      26,
@@ -220,8 +220,7 @@ function getRenderer(complete, takUrl) {
 		  {
 		    "x": "Apple A14 GPU",
 		    "v": [
-		      2778,
-		      2880
+		      2778
 		    ]
 		  },
 		  {
@@ -344,8 +343,7 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple A14 GPU",
 		    "v": [
 		      2360,
-		      2778,
-		      2880
+		      2778
 		    ]
 		  },
 		  {
