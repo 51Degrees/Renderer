@@ -28,7 +28,7 @@
 // @param complete the function to call with the renderer.
 // @param takUrl the full URL of the tak.js file (optional).
 function getRenderer(complete, takUrl) {
-	/*! VERSION = 1.620628 */ 
+	/*! VERSION = 1.620631 */ 
 	var nodes = 
 		[
 		  {
