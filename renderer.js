@@ -28,7 +28,7 @@
 // @param complete the function to call with the renderer.
 // @param takUrl the full URL of the tak.js file (optional).
 function getRenderer(complete, takUrl) {
-	/*! VERSION = 1.631725 */ 
+	/*! VERSION = 1.631822 */ 
 	var nodes = 
 		[
 		  {
@@ -67,8 +67,8 @@ function getRenderer(complete, takUrl) {
 		    "n": [
 		      22,
 		      18,
-		      21,
 		      20,
+		      21,
 		      19,
 		      17,
 		      16
@@ -83,12 +83,12 @@ function getRenderer(complete, takUrl) {
 		    "n": [
 		      22,
 		      18,
-		      21,
 		      10,
 		      11,
 		      12,
 		      15,
 		      20,
+		      21,
 		      19,
 		      14,
 		      24,
@@ -710,6 +710,7 @@ function getRenderer(complete, takUrl) {
 		    "x": "Apple M1 GPU",
 		    "v": [
 		      105985484,
+		      2364051618,
 		      3403189785
 		    ]
 		  },
@@ -1190,7 +1191,8 @@ function getRenderer(complete, takUrl) {
 		  {
 		    "x": "Apple M1 GPU",
 		    "v": [
-		      105985484
+		      105985484,
+		      2364051618
 		    ]
 		  },
 		  {
@@ -1198,6 +1200,7 @@ function getRenderer(complete, takUrl) {
 		    "m": function(n){return hash(n);},
 		    "n": [
 		      155,
+		      122,
 		      154
 		    ],
 		    "v": [
