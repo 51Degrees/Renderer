@@ -28,11 +28,11 @@
 // @param complete the function to call with the renderer.
 // @param takUrl the full URL of the tak.js file (optional).
 function getRenderer(complete, takUrl) {
-	/*! VERSION = 1.636909 */ 
+	/*! VERSION = 1.637287 */ 
 	var decisionTree = 
 		{
-		  "Version": "1.636909",
-		  "PublishDate": "2022-10-07T00:20:00.6982208Z",
+		  "Version": "1.637287",
+		  "PublishDate": "2022-10-08T00:25:14.1167014Z",
 		  "Data": [
 		    {
 		      "x": "Unknown",
@@ -51,8 +51,8 @@ function getRenderer(complete, takUrl) {
 		        10,
 		        11,
 		        12,
-		        15,
 		        16,
+		        15,
 		        6,
 		        7,
 		        14,
@@ -90,11 +90,11 @@ function getRenderer(complete, takUrl) {
 		        10,
 		        11,
 		        12,
-		        15,
 		        16,
 		        21,
 		        22,
 		        20,
+		        15,
 		        25,
 		        28,
 		        18,
