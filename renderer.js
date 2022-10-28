@@ -28,11 +28,11 @@
 // @param complete the function to call with the renderer.
 // @param takUrl the full URL of the tak.js file (optional).
 function getRenderer(complete, takUrl) {
-	/*! VERSION = 1.639287 */ 
+	/*! VERSION = 1.641363 */ 
 	var decisionTree = 
 		{
-		  "Version": "1.639287",
-		  "PublishDate": "2022-10-26T00:28:09.4417632Z",
+		  "Version": "1.641363",
+		  "PublishDate": "2022-10-28T00:22:31.2016342Z",
 		  "Data": [
 		    {
 		      "x": "Unknown",
@@ -1120,7 +1120,8 @@ function getRenderer(complete, takUrl) {
 		      "x": "Apple A12Z GPU",
 		      "v": [
 		        958581112,
-		        2301174800
+		        2301174800,
+		        2487400911
 		      ]
 		    },
 		    {
