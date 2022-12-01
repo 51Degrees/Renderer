@@ -1,12 +1,7 @@
 /*!*********************************************************************
  * This Source Code Form is copyright of 51 Degrees Mobile Experts Limited.
- * Copyright 2019 51 Degrees Mobile Experts Limited, 9 Greyfriars Rd,
- * Reading, Berkshire, RG1 1NU.
- *
- * This Source Code Form is the subject of the following patents and patent
- * applications, owned by 51 Degrees Mobile Experts Limited of 9 Greyfriars
- * Rd, Reading, Berkshire, RG1 1NU:
- * GB1905888.2 and EP19192975.1.
+ * Copyright 2022 51 Degrees Mobile Experts Limited, Davidson House,
+ * Forbury Square, Reading, Berkshire, United Kingdom RG1 3EU.
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0.
@@ -32,7 +27,7 @@ function getRenderer(complete, takUrl) {
 	var decisionTree = 
 		{
 		  "Version": "1.641563",
-		  "PublishDate": "2022-11-30T00:22:04.4689921Z",
+		  "PublishDate": "2022-12-01T00:23:42.7546099Z",
 		  "Data": [
 		    {
 		      "x": "Unknown",
@@ -396,7 +391,7 @@ function getRenderer(complete, takUrl) {
 		    },
 		    {
 		      "x": "Apple A14 GPU|Apple A15 GPU|Apple M2 GPU",
-		      "m": function(n){return width(n);},
+		      "m": function(n){return ratio(n);},
 		      "n": [
 		        81,
 		        80
@@ -888,13 +883,13 @@ function getRenderer(complete, takUrl) {
 		        57
 		      ],
 		      "v": [
-		        1284
+		        3.0
 		      ]
 		    },
 		    {
 		      "x": "Apple M2 GPU",
 		      "v": [
-		        1940
+		        2.0
 		      ]
 		    },
 		    {
