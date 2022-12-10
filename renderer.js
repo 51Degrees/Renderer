@@ -27,7 +27,7 @@ function getRenderer(complete, takUrl) {
 	var decisionTree = 
 		{
 		  "Version": "1.641563",
-		  "PublishDate": "2022-12-09T00:23:24.3002937Z",
+		  "PublishDate": "2022-12-10T00:22:24.2982412Z",
 		  "Data": [
 		    {
 		      "x": "Unknown",
@@ -391,7 +391,7 @@ function getRenderer(complete, takUrl) {
 		    },
 		    {
 		      "x": "Apple A14 GPU|Apple A15 GPU|Apple M2 GPU",
-		      "m": function(n){return ratio(n);},
+		      "m": function(n){return width(n);},
 		      "n": [
 		        81,
 		        80
@@ -883,13 +883,13 @@ function getRenderer(complete, takUrl) {
 		        57
 		      ],
 		      "v": [
-		        3.0
+		        1284
 		      ]
 		    },
 		    {
 		      "x": "Apple M2 GPU",
 		      "v": [
-		        2.0
+		        1940
 		      ]
 		    },
 		    {
