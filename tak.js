@@ -19,9 +19,9 @@ this.onmessage = function (iterations) {
     function benchmark(func, iterations) {
         var results = [];
         for (var i = 0; i < iterations; i++) {
-            var start = Date.now();
+            var start = performance.now();
             func();
-            results.push(Date.now() - start);
+            results.push((performance.now() - start).toFixed(0));
         }
         return results;
     }
