@@ -27,7 +27,7 @@ function getRenderer(complete, takUrl) {
 	var decisionTree = 
 		{
 		  "Version": "1.641563",
-		  "PublishDate": "2023-02-02T00:21:39.9751679Z",
+		  "PublishDate": "2023-02-03T00:21:54.8751262Z",
 		  "Data": [
 		    {
 		      "x": "Unknown",
@@ -391,7 +391,7 @@ function getRenderer(complete, takUrl) {
 		    },
 		    {
 		      "x": "Apple A14 GPU|Apple A15 GPU|Apple M2 GPU",
-		      "m": function(n){return width(n);},
+		      "m": function(n){return ratio(n);},
 		      "n": [
 		        81,
 		        80
@@ -883,13 +883,13 @@ function getRenderer(complete, takUrl) {
 		        57
 		      ],
 		      "v": [
-		        1284
+		        3.0
 		      ]
 		    },
 		    {
 		      "x": "Apple M2 GPU",
 		      "v": [
-		        1940
+		        2.0
 		      ]
 		    },
 		    {
@@ -1962,19 +1962,18 @@ function getRenderer(complete, takUrl) {
             }
         }
 
-        // If this node has children then wait 10ms and then retry the 
-        // evaluation of this function if we've tried it less than 10 times.
-        if (node.n.length > 0 && iterations < 10) {
+        // If this node has children, but we haven't matched any of them, then wait 10ms and 
+        // retry the evaluation of this function if we've tried it less than x times.
+        if (node.n.length > 0 && iterations < maxRetries) {
             setTimeout(function () {
                 evaluateNode(node, iterations + 1)
             }, 10);
-        } /* else {
-            previousResults = [];
-        }*/
-
-        // There child that have matched. Therefore return the Profile
-        // Id of the node passed.
-        complete(node.x);
+        } else {
+            //previousResults = [];
+            // The result didn't match any children (or there are no children). 
+            // Therefore we've reached our result. Return the Profile Id of the current node.
+            complete(node.x);
+        }
     }
 
     // Evaluates the children of the node until a Profile Id is found.
